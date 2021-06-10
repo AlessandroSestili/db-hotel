@@ -12,7 +12,11 @@ GROUP BY `ospite_id`
 HAVING `numero_prenotazioni` > 2
 
 <!-- 2.Stampare tutti gli ospiti per ogni prenotazione -->
+SELECT `ospite_id` , `ospiti`.`name` , `ospiti`.`lastname`  
+FROM `prenotazioni_has_ospiti`
 
+JOIN `ospiti`
+ON `ospiti`.`id` = `ospite_id`
 
 <!-- 3.Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018 -->
 
