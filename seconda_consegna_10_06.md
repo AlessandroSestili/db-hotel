@@ -47,8 +47,15 @@ WHERE `stanze` . `floor` = 1
 
 
 # <!-- 5.Prendi i dati di fatturazione per la prenotazionecon id=7 -->
+SELECT *
+FROM `pagamenti`
 
-# <!-- 6.Le stanze sono state tutte prenotate almeno una volta? 
+LEFT JOIN `paganti`
+ON `pagamenti`.`pagante_id` = `paganti`.`id`
+
+WHERE `pagamenti`.`prenotazione_id` = 7
+# <!-- 6.Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+
 
 
 
