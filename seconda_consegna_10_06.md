@@ -64,3 +64,10 @@ SELECT HOUR(`created_at`) AS `ora` , COUNT(`id`) AS `prenotazioni`
 FROM `prenotazioni`
 GROUP BY `ora`
 ORDER BY `prenotazioni` DESC
+
+# <!-- 5.Quante prenotazioni ha fatto l’ospite che ha fattopiùprenotazioni? (quante, non chi!) -->
+SELECT `ospite_id` , COUNT(*) AS `prenotazioni`
+FROM `prenotazioni_has_ospiti`
+GROUP BY `ospite_id`
+GROUP BY `prenotazioni` DESC
+LIMIT 1
