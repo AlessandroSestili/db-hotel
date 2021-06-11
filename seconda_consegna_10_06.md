@@ -55,4 +55,12 @@ FROM `pagamenti`
 GROUP BY `status`
 
 # <!-- 3.Conta quante volte è stata prenotata ogni stanza -->
+SELECT `stanza_id`, COUNT (`id`) AS `prenotazioni_totali` DESC
+FROM `prenotazioni`
+GROUP BY `stanza_id`
 
+# <!-- 4.Fai una analisi per vedere se ci sono ore in cui leprenotazioni sonopiù frequenti -->
+SELECT HOUR(`created_at`) AS `ora` , COUNT(`id`) AS `prenotazioni`
+FROM `prenotazioni`
+GROUP BY `ora`
+ORDER BY `prenotazioni` DESC
