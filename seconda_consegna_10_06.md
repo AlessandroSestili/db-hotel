@@ -34,8 +34,20 @@ WHERE YEAR(`prenotazioni`.`created_at`) = 2018
     AND MONTH(`prenotazioni`.`created_at`) = 5
 
 # <!-- 4.Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano -->
+SELECT
+FROM
+
+LEFT JOIN `prenotazioni`
+ON `prenotazioni`.`id` = `pagamenti`.`prenotazione_id`
+
+LEFT JOIN `stanze`
+ON `prenotazioni`.`stanza_id` = `stanze`.`id`
+
+WHERE `stanze` . `floor` = 1
+
 
 # <!-- 5.Prendi i dati di fatturazione per la prenotazionecon id=7 -->
+
 # <!-- 6.Le stanze sono state tutte prenotate almeno una volta? 
 
 
